@@ -1,17 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import DateFnsUtils from "@date-io/date-fns";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
+import "@material-ui/icons";
+import { StylesProvider } from "@material-ui/styles";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import { teal } from "@material-ui/core/colors";
+import store from "../src/redux/store";
+// main app
+import App from "../src/App";
+import Config from "../src/Config";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const theme = createMuiTheme({
+  palette: {
+    primary: teal,
+    secondary: teal,
+  },
+  typography: {
+    fontFamily: '"Roboto", sans-serif',
+    body1: {
+      fontWeight: 300,
+    },
+    h6: {
+      fontSize: 16,
+    },
+  },
+});
+
+document.querySelector("title").innerHTML = Config.TITLE;
+
+ReactDOM.render(
+  <Provider store={store}>
+    <StylesProvider injectFirst>
+      <MuiThemeProvider theme={theme}>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <App />
+        </MuiPickersUtilsProvider>
+      </MuiThemeProvider>
+    </StylesProvider>
+  </Provider>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

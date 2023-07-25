@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPatient should render properly 1`] = `
+<styled.div>
+  <div
+    className="search-bar"
+  >
+    <WithStyles(ForwardRef(TextField))
+      disabled={false}
+      error={false}
+      helperText=""
+      id="search-field"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      type="search"
+      value=""
+    />
+    <WithStyles(ForwardRef(Select))
+      onChange={[Function]}
+      value="@ncg"
+    >
+      <WithStyles(ForwardRef(MenuItem))
+        key="@ncg"
+        value="@ncg"
+      >
+        @ncg
+      </WithStyles(ForwardRef(MenuItem))>
+    </WithStyles(ForwardRef(Select))>
+    <WithStyles(ForwardRef(IconButton))
+      aria-label="search"
+      className="icon-button"
+      disabled={true}
+      onClick={[Function]}
+      theme="primary"
+      type="button"
+    >
+      <SearchIcon
+        className="search-button"
+        id="search-button"
+        theme="primary"
+        variant="outlined"
+      />
+    </WithStyles(ForwardRef(IconButton))>
+  </div>
+</styled.div>
+`;

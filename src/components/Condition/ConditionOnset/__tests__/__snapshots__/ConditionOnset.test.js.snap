@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConditionOnset should render properly 1`] = `
+<span>
+  Onset time: 19/02/2020
+</span>
+`;
