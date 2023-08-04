@@ -24,8 +24,8 @@ function SupportInformation() {
   return (
     <Container component="title" maxWidth="md">
       <Typography component="h1" variant="h5" style={{ textAlign: "center" }}>
-        For access please send an email to <b>{Config.SUPPORT_EMAIL}</b> with your
-        registered client id
+        For access please send an email to <b>{Config.SUPPORT_EMAIL}</b> with
+        your registered client id
       </Typography>
     </Container>
   );

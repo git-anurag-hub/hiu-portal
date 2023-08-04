@@ -1,4 +1,4 @@
-import { GET_CONSENTS_ACTION_TYPES } from '../actions/loadConsentsActions';
+import { GET_CONSENTS_ACTION_TYPES } from "../actions/loadConsentsActions";
 
 const initialState = {
   consentsList: [],

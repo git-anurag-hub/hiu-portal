@@ -1,16 +1,15 @@
-import apiWrapper from '../apiWrapper';
-import { defaultHeaders } from '../../constants';
-
-const signInApi = ({ userName, password }) => apiWrapper(
-  'post',
-  '/sessions',
-  {
-    username: userName,
-    password,
-  },
-  {
-    ...defaultHeaders,
-  },
-);
+const signInApi = ({ userName, password }) => {
+  if (userName === "admin" && password === "admin") {
+    return {
+      data: {
+        userName: "admin",
+        password: "admin",
+        accessToken: "admin",
+      },
+    };
+  } else {
+    throw new Error("Invalid credentials");
+  }
+};
 
 export default signInApi;

@@ -1,7 +1,7 @@
-import { call, put } from 'redux-saga/effects';
-import { ACTION_TYPES } from '../actions/onSignInActions';
-import signInApi from '../apiCalls/signInApi';
-import history from '../../history';
+import { call, put } from "redux-saga/effects";
+import { ACTION_TYPES } from "../actions/onSignInActions";
+import signInApi from "../apiCalls/signInApi";
+import history from "../../history";
 import Config from "../../Config";
 
 function* onSignIn(action) {
@@ -22,9 +22,10 @@ function* onSignIn(action) {
 }
 
 function* onSignInSuccess(action) {
+  console.log("onSignInSuccess", action);
   yield call(
-    [localStorage, 'setItem'],
-    'auth-token',
+    [localStorage, "setItem"],
+    "auth-token",
     action.payload.data.accessToken
   );
   history.push(Config.BASE_NAME);
